@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//sneaky little test comment
 public class Soldier : MonoBehaviour
 {
     public float healthPoints = 100f;
