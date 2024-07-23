@@ -49,7 +49,7 @@ public class MoveCharacter : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
         {
             isGrounded = false;
         }
@@ -60,7 +60,7 @@ public class MoveCharacter : MonoBehaviour
     {
 
         //Making sure the isGrounded flag is properly set when touching both Ground and Obstacle
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
         {
             isGrounded = true;
         }
