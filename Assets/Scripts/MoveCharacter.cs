@@ -6,14 +6,23 @@ public class MoveCharacter : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpForce = 10f;
+
     private bool isGrounded;
     private bool jumpRequest;
     private Rigidbody2D rb;
+	
+	private bool isCombinable = false; //Becomes true when a potion is consumed.
+	
+	public Vector2[] squareVertices = new Vector2[1];
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.sharedMaterial = Resources.Load<PhysicsMaterial2D>("NoFriction");
+		
+		SpriteRenderer square_SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+		Sprite squareSprite = square_SpriteRenderer.sprite;
+		squareVertices = squareSprite.vertices;
     }
 
     void Update()
@@ -44,12 +53,20 @@ public class MoveCharacter : MonoBehaviour
         {
             isGrounded = true;
         }
-        
+		else if (collision.gameObject.CompareTag("Potion"))
+		{
+			//For a collision with a Potion.
+			isCombinable = true;
+		}
+		else if (collision.gameObject.CompareTag("Shape") && isCombinable)
+		{
+			//Combine shapes.
+		}
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Shape"))
         {
             isGrounded = false;
         }
