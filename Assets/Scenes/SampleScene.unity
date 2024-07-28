@@ -1024,8 +1024,8 @@ Transform:
   m_GameObject: {fileID: 929269057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.86337364, w: 0.5045652}
-  m_LocalPosition: {x: 4.09, y: 1.61, z: 0}
-  m_LocalScale: {x: 1.1945, y: 1.1945, z: 1.1945}
+  m_LocalPosition: {x: 3.81, y: 1.61, z: 0}
+  m_LocalScale: {x: 0.9822948, y: 1.0083572, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1039,7 +1039,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 929269057}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e55e96ca709b8ff4e9f80517a2560219, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1091,8 +1091,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 2
   m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1630,6 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 10
+  rotationSpeed: 100
   squareVertices:
   - {x: 0, y: 0}
 --- !u!50 &1659334775

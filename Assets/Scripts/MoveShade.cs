@@ -21,7 +21,7 @@ public class MoveShade : MonoBehaviour
 
             // Mirror the position of the top square
             Vector2 topSquarePosition = topSquare.transform.position;
-            transform.position = new Vector2(topSquarePosition.x, -topSquarePosition.y - (float)2.3);
+            transform.position = new Vector2(topSquarePosition.x, -topSquarePosition.y - 1.95f);
 
             // Mirror the rotation of the top square
             transform.rotation = Quaternion.Euler(0, 0, -topSquare.transform.rotation.eulerAngles.z);
