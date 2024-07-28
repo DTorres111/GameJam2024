@@ -6,6 +6,7 @@ public class MoveCharacter : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpForce = 10f;
+    public float rotationSpeed = 600f; // Rotation speed
 
     private bool isGrounded;
     private bool jumpRequest;
@@ -36,6 +37,17 @@ public class MoveCharacter : MonoBehaviour
         {
             jumpRequest = true;
         }
+
+        //Rotating
+            if (Input.GetKey(KeyCode.Q))
+            {
+                transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);
+            }
+        
     }
 
     void FixedUpdate()
@@ -77,7 +89,7 @@ public class MoveCharacter : MonoBehaviour
     {
 
         //Making sure the isGrounded flag is properly set when touching both Ground and Obstacle
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Shape"))
         {
             isGrounded = true;
         }
