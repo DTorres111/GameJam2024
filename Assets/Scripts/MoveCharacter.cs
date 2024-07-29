@@ -11,6 +11,12 @@ public class MoveCharacter : MonoBehaviour
     private bool isGrounded;
     private bool jumpRequest;
     private Rigidbody2D rb;
+    public float gScale;
+    public float coeff = 1.5f;
+    public float jHeight = 5f;
+    public float bpWindow = 0.2f;
+    public float bpTime;
+    private float pressStr;
 	
 	private bool isCombinable = false; //Becomes true when a potion is consumed.
 	
@@ -24,6 +30,7 @@ public class MoveCharacter : MonoBehaviour
 		SpriteRenderer square_SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 		Sprite squareSprite = square_SpriteRenderer.sprite;
 		squareVertices = squareSprite.vertices;
+        gScale = rb.gravityScale;
     }
 
     void Update()
@@ -35,7 +42,9 @@ public class MoveCharacter : MonoBehaviour
         // Jumping
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
+            bpTime = 0;
             jumpRequest = true;
+            jumpForce = Mathf.Sqrt(jHeight * (Physics2D.gravity.y * rb.gravityScale) * -2) * rb.mass;
         }
 
         //Rotating
@@ -56,6 +65,15 @@ public class MoveCharacter : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jumpRequest = false;
+        }
+
+        if (rb.velocity.y >= -0.05)
+        {
+            rb.gravityScale = gScale;
+        }
+        else
+        {
+            rb.gravityScale = gScale * coeff;
         }
     }
 
