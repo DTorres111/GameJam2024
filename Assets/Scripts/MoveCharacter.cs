@@ -21,9 +21,11 @@ public class MoveCharacter : MonoBehaviour
 	private bool isCombinable = false; //Becomes true when a potion is consumed.
 	
 	public Vector2[] squareVertices = new Vector2[1];
+    AudioManager audioManager;
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         rb = GetComponent<Rigidbody2D>();
         rb.sharedMaterial = Resources.Load<PhysicsMaterial2D>("NoFriction");
 
@@ -76,6 +78,8 @@ public class MoveCharacter : MonoBehaviour
     {
         if (jumpRequest)
         {
+            //play jump
+            audioManager.PlaySFX(audioManager.jump);
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jumpRequest = false;
         }
