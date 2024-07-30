@@ -22,8 +22,12 @@ public class MoveCharacter : MonoBehaviour
 	
 	public Vector2[] squareVertices = new Vector2[1];
 
+    AudioManager audioManager;
+
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         rb = GetComponent<Rigidbody2D>();
         rb.sharedMaterial = Resources.Load<PhysicsMaterial2D>("NoFriction");
 		
@@ -42,9 +46,12 @@ public class MoveCharacter : MonoBehaviour
         // Jumping
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
+            
             bpTime = 0;
             jumpRequest = true;
             jumpForce = Mathf.Sqrt(jHeight * (Physics2D.gravity.y * rb.gravityScale) * -2) * rb.mass;
+
+
         }
 
         //Rotating
@@ -65,6 +72,9 @@ public class MoveCharacter : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jumpRequest = false;
+
+            //play jump
+            audioManager.PlaySFX(audioManager.jump);
         }
 
         if (rb.velocity.y >= -0.05)
