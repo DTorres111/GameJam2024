@@ -4,21 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
-  - Wall
-  - RedPortal
-  - BluePortal
-  - Soldier
-  - Gun
-  - increaseFireRate
+  - Ground
+  - Obstacle
+  - Potion
+  - Shape
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Shapes
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 
