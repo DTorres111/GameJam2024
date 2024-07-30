@@ -8,7 +8,6 @@ TagManager:
   - Obstacle
   - Potion
   - Shape
-  - Audio
   layers:
   - Default
   - TransparentFX
