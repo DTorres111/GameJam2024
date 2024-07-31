@@ -10325,7 +10325,7 @@ GameObject:
   - component: {fileID: 2095889929}
   - component: {fileID: 2095889928}
   - component: {fileID: 2095889927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform1x1_Shadow
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
