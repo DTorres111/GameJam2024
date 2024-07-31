@@ -16,7 +16,7 @@ public class Win : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         MoveCharacter character = other.GetComponent<MoveCharacter>();
-        if (character != null && character.someFlag)
+        if (character != null && character.isConjoined)
         {
            
             //play success

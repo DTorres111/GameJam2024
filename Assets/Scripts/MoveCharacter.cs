@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCharacter : MonoBehaviour
 {
-    public bool someFlag = true;
+    public bool isConjoined = false;
     public float speed = 5f;
     public float jumpForce = 10f;
     public float rotationSpeed = 600f; // Rotation speed
@@ -96,21 +96,29 @@ public class MoveCharacter : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Potion"))
+        {
+            //For a collision with a Potion.
+            isCombinable = true;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
-		else if (collision.gameObject.CompareTag("Potion"))
-		{
-			//For a collision with a Potion.
-			isCombinable = true;
-		}
-		else if (collision.gameObject.CompareTag("Shape") && isCombinable)
-		{
-			//Combine shapes.
-		}
+        else if (collision.gameObject.CompareTag("Shape") && isCombinable)
+        {
+            //Combine shapes.
+
+            FixedJoint2D fj = gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
+            fj.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
+            isConjoined = true;
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
