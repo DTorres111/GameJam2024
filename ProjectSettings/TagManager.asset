@@ -9,6 +9,7 @@ TagManager:
   - Potion
   - Shape
   - Audio
+  - Character
   layers:
   - Default
   - TransparentFX

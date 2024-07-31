@@ -368,6 +368,8 @@ GameObject:
   m_Component:
   - component: {fileID: 81603058}
   - component: {fileID: 81603057}
+  - component: {fileID: 81603060}
+  - component: {fileID: 81603059}
   m_Layer: 0
   m_Name: WillowTree
   m_TagString: Untagged
@@ -436,12 +438,69 @@ Transform:
   m_GameObject: {fileID: 81603056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 209.299, y: 0.368, z: 0}
+  m_LocalPosition: {x: 209.33, y: 0.33, z: 0}
   m_LocalScale: {x: 1.0868183, y: 0.85071856, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &81603059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81603056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1898f6b590a66304391bd351f504d642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &81603060
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81603056}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08438969, y: -0.3988757}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.88, y: 3.87}
+    newSize: {x: 2.88, y: 3.87}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2598114, y: 2.2098143}
+  m_EdgeRadius: 0
 --- !u!1 &96705011
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +4076,7 @@ GameObject:
   - component: {fileID: 684016608}
   m_Layer: 0
   m_Name: Platform2x2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9549,6 +9608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b310aef34ecfb024d8b507b1d3aa7c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  someFlag: 1
   speed: 5
   jumpForce: 10
   rotationSpeed: 100

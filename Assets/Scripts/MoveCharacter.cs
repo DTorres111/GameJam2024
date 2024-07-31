@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveCharacter : MonoBehaviour
 {
+    public bool someFlag = true;
     public float speed = 5f;
     public float jumpForce = 10f;
     public float rotationSpeed = 600f; // Rotation speed
