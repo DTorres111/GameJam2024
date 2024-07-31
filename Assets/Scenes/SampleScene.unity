@@ -1630,6 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 10
+  isCombinable: 0
   squareVertices:
   - {x: 0, y: 0}
 --- !u!50 &1659334775

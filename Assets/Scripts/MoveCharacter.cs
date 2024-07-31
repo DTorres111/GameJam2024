@@ -46,6 +46,16 @@ public class MoveCharacter : MonoBehaviour
             jumpRequest = false;
         }
     }
+	
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		if (collider.gameObject.CompareTag("Potion"))
+		{
+			//For a collision with a Potion.
+			isCombinable = true;
+		}
+	}
+	
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -53,14 +63,13 @@ public class MoveCharacter : MonoBehaviour
         {
             isGrounded = true;
         }
-		else if (collision.gameObject.CompareTag("Potion"))
-		{
-			//For a collision with a Potion.
-			isCombinable = true;
-		}
 		else if (collision.gameObject.CompareTag("Shape") && isCombinable)
 		{
 			//Combine shapes.
+			//ContactPoint2D contactPoint = collision.GetContact(0);
+			
+			FixedJoint2D fj = gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
+			fj.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
 		}
     }
 
