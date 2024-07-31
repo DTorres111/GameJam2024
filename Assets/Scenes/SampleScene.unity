@@ -2721,6 +2721,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2771,7 +2772,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.570433
+  orthographic size: 11.483197
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2796,11 +2797,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.004803, y: -0.5195767, z: -10}
-  m_LocalScale: {x: 1.6154872, y: 1.0582011, z: 1}
+  m_LocalPosition: {x: -7.0962, y: -0.87, z: -10}
+  m_LocalScale: {x: 1.5124998, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1659334773}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -2816,6 +2817,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu1: {fileID: 941836621}
   isPaused: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e0297c6eb4ec459c9f4127a73040b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1659334773}
 --- !u!1 &533873168
 GameObject:
   m_ObjectHideFlags: 0
@@ -8963,7 +8977,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 277970079}
-  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1659334774
@@ -10864,7 +10877,7 @@ MonoBehaviour:
   intro: {fileID: 8300000, guid: c8ac953a730160c4f94c856252a67c8f, type: 3}
   success: {fileID: 8300000, guid: 0430175653380dc439b1616fb911de5f, type: 3}
   fail: {fileID: 8300000, guid: efbd26dedad3cf14aacef73b55d65b45, type: 3}
-  jump: {fileID: 8300000, guid: 77e7158bae5d581448c068c39aad9d90, type: 3}
+  jump: {fileID: 8300000, guid: a24328b467fb0544abac62cc34a0880b, type: 3}
 --- !u!4 &2002526681
 Transform:
   m_ObjectHideFlags: 0
@@ -11412,6 +11425,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 519420032}
   - {fileID: 1659334773}
   - {fileID: 449510652}
   - {fileID: 929269059}
