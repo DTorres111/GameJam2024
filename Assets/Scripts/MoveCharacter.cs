@@ -80,6 +80,7 @@ public class MoveCharacter : MonoBehaviour
         {
             //play jump
             audioManager.PlaySFX(audioManager.jump);
+
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jumpRequest = false;
         }
